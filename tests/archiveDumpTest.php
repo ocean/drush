@@ -16,10 +16,10 @@ class archiveDumpCase extends CommandUnishTestCase {
   function testArchiveDump() {
 
     $env = 'testarchivedump';
-    $this->setUpDrupal($env, TRUE);
-    // $this->setUpDrupal(1, TRUE);
-    $root = $this->sites[$env]['root'];
-    // $root = $this->webroot();
+    // $this->setUpDrupal($env, TRUE);
+    $this->setUpDrupal(1, TRUE);
+    // $root = $this->sites[$env]['root'];
+    $root = $this->webroot();
     $docroot = 'web';
     // $uri = 'dev';
 
