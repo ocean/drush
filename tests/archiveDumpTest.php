@@ -21,7 +21,7 @@ class archiveDumpCase extends CommandUnishTestCase {
     // $root = $this->sites[$env]['root'];
     $root = $this->webroot();
     // $docroot = 'web';
-    // $uri = 'dev';
+    $uri = 'dev';
 
     // Create the alias for D7 site.
     // $aliases['archivedump'] = array(
@@ -37,10 +37,11 @@ class archiveDumpCase extends CommandUnishTestCase {
     $dump_dest = "dump.tar.gz";
     $options = array(
       'root' => $root,
-      'uri' => $env,
+      'uri' => $uri,
       'yes' => NULL,
       'destination' => 'dump.tar.gz',
     );
+    $this->drush('cache-clear', array('drush'), $options);
     $this->drush('archive-dump', array(), $options);
     $exec = sprintf('file %s/%s', UNISH_SANDBOX, $dump_dest);
     $this->execute($exec);
