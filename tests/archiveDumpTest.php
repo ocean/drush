@@ -41,7 +41,7 @@ class archiveDumpCase extends CommandUnishTestCase {
       'yes' => NULL,
       'destination' => 'dump.tar.gz',
     );
-    $this->drush('archive-dump', array('@archivedump'), $options);
+    $this->drush('archive-dump', 'default', $options);
     $exec = sprintf('file %s/%s', UNISH_SANDBOX, $dump_dest);
     $this->execute($exec);
     $output = $this->getOutput();
