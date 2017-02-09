@@ -20,18 +20,18 @@ class archiveDumpCase extends CommandUnishTestCase {
     $this->setUpDrupal(1, TRUE);
     // $root = $this->sites[$env]['root'];
     $root = $this->webroot();
-    $docroot = 'web';
+    // $docroot = 'web';
     // $uri = 'dev';
 
     // Create the alias for D7 site.
-    $aliases['archivedump'] = array(
-      'root' => UNISH_SANDBOX . '/' . $docroot,
-      // 'root' => $root,
-      'uri' => $env,
-    );
-    $contents = $this->file_aliases($aliases);
-    $alias_path = "$root/aliases.drushrc.php";
-    file_put_contents($alias_path, $contents);
+    // $aliases['archivedump'] = array(
+    //   'root' => UNISH_SANDBOX . '/' . $docroot,
+    //   // 'root' => $root,
+    //   'uri' => $env,
+    // );
+    // $contents = $this->file_aliases($aliases);
+    // $alias_path = "$root/aliases.drushrc.php";
+    // file_put_contents($alias_path, $contents);
 
     $name = "example";
     $dump_dest = "dump.tar.gz";
