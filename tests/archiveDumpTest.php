@@ -33,6 +33,14 @@ class archiveDumpCase extends CommandUnishTestCase {
     // $alias_path = "$root/aliases.drushrc.php";
     // file_put_contents($alias_path, $contents);
 
+    $cc_options = array(
+      'root' => $root,
+      'uri' => $uri,
+      'yes' => NULL,
+    );
+    // Clear drush cache to refresh commands.
+    $this->drush('cache-clear', array('drush'), $cc_options);
+
     $name = "example";
     $dump_dest = "dump.tar.gz";
     $options = array(
@@ -41,7 +49,6 @@ class archiveDumpCase extends CommandUnishTestCase {
       'yes' => NULL,
       'destination' => 'dump.tar.gz',
     );
-    $this->drush('cache-clear', array('drush'), $options);
     $this->drush('archive-dump', array(), $options);
     $exec = sprintf('file %s/%s', UNISH_SANDBOX, $dump_dest);
     $this->execute($exec);
