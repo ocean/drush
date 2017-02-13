@@ -43,7 +43,7 @@ env:
     - UNISH_DRUPAL_MAJOR_VERSION=8 PHPUNIT_ARGS=--group=pm
     # - UNISH_DRUPAL_MAJOR_VERSION=8 PHPUNIT_ARGS=--group=quick-drupal
     # - UNISH_DRUPAL_MAJOR_VERSION=8 PHPUNIT_ARGS=--exclude-group=base,make,commands,pm,quick-drupal TEST_CHILDREN="drush-ops/config-extra"
-    - UNISH_DRUPAL_MAJOR_VERSION=8 PHPUNIT_ARGS=--filter archiveDump
+    - UNISH_DRUPAL_MAJOR_VERSION=8 PHPUNIT_ARGS="--filter archiveDump"
 
     # - UNISH_DB_URL=sqlite://none/of/this/matters PHPUNIT_ARGS=--group=make
     # - UNISH_DB_URL=sqlite://none/of/this/matters PHPUNIT_ARGS=--group=base
